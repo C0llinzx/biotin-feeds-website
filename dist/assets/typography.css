@@ -1,0 +1,71 @@
+/* One variable typeface across content, controls, and display typography. */
+body {
+  font-optical-sizing: auto;
+}
+input, select, textarea, button {
+  font-family: var(--body);
+}
+
+/* Keep the credential banner in flow so it can never obscure the CTA. */
+.hero {
+  height: auto;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: stretch;
+  padding-top: 124px;
+}
+.hero-copy {
+  grid-row: 1;
+  align-self: center;
+  padding: 32px 0 48px;
+}
+.hero h1 {
+  font-size: clamp(3rem, 4.7vw, 5.1rem);
+  line-height: 1.03;
+  letter-spacing: -.055em;
+  margin: 22px 0 24px;
+}
+.hero-lede {
+  margin-bottom: 28px;
+}
+.hero-actions {
+  flex-wrap: wrap;
+}
+.trust-strip {
+  position: relative;
+  grid-row: 2;
+  align-self: end;
+  width: 100%;
+}
+.section h2 {
+  font-size: clamp(2.55rem, 4vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: -.05em;
+}
+.finder-heading h2,.catalog-head h2,.why-head h2,.coverage-copy h2,.award-copy h2,.testimonial-head h2,.contact-intro h2,.gallery-heading h2{max-width:15ch}
+.finder-heading>p,.catalog-head>p,.why-head>p,.coverage-copy>p,.award-copy>p,.testimonial-head>p,.contact-intro>p,.gallery-heading>p{font-size:clamp(1rem,1.35vw,1.08rem)}
+.about-number {
+  font-size: clamp(5rem, 8vw, 7.5rem);
+  letter-spacing: -.06em;
+}
+@media (max-width: 900px) {
+  .hero-copy { width: calc(100% - 44px); }
+  .hero h1 { max-width: 680px; }
+}
+@media (max-width: 600px) {
+  .hero { padding-top: 106px; }
+  .hero-copy { padding: 28px 0 40px; }
+  .hero h1 {
+    font-size: clamp(2.5rem, 12.5vw, 3.4rem);
+    letter-spacing: -.05em;
+  }
+  .hero-lede { font-size: 1rem; }
+  .hero-actions { max-width: 100%; }
+  .section h2 { font-size: clamp(2.25rem, 9.6vw, 3.1rem); }
+}
+@media (min-width: 901px) and (max-height: 760px) {
+  .hero { padding-top: 108px; }
+  .hero-copy { padding: 20px 0 32px; }
+  .hero h1 { font-size: clamp(3rem, 4.5vw, 4.75rem); }
+}
