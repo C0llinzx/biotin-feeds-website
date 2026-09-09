@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://biotinfeeds.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://biotinfeeds.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://biotinfeeds.com/products/layer-mash/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/grower-mash/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/chick-mash/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/prelay-mash/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/broiler-prestarter/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/broiler-starter/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/broiler-finisher/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/layer-40/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/grower-30/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/chick-40/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/broiler-50/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://biotinfeeds.com/products/ruminant/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

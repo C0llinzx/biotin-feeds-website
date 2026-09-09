@@ -23,8 +23,9 @@
   <meta name="twitter:description" content="Precisely formulated poultry and ruminant feed for farmers, distributors and depots across Northern Nigeria.">
   <meta name="twitter:image" content="https://biotinfeeds.com/og.png">
   <meta name="twitter:image:alt" content="Biotin Feeds — Precise nutrition for healthy livestock">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -36,6 +37,91 @@
   <link rel="stylesheet" href="assets/team.css">
   <link rel="stylesheet" href="assets/premium-interactions.css">
   <link rel="stylesheet" href="assets/responsive-fixes.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://biotinfeeds.com/#organization",
+        "name": "Biotin Feeds Ltd.",
+        "url": "https://biotinfeeds.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://biotinfeeds.com/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "foundingDate": "2012",
+        "founder": {"@type": "Person", "name": "Abdullahi Ishola (RAS)"},
+        "description": "Biotin Feeds produces precisely formulated poultry and ruminant feed for farmers across Northern Nigeria.",
+        "telephone": "+2347031944660",
+        "email": "precisenutrition5@gmail.com",
+        "sameAs": ["https://www.facebook.com/share/19eo3jDQGw/?mibextid=wwXIfr"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "BR 4, Nnamdi Azikiwe Expressway, opposite IBRO Filling Station, Ungwan Muazu",
+          "addressLocality": "Kaduna",
+          "addressRegion": "Kaduna State",
+          "addressCountry": "NG"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://biotinfeeds.com/#kaduna-location",
+        "name": "Biotin Feeds — Kaduna",
+        "url": "https://biotinfeeds.com/",
+        "image": "https://biotinfeeds.com/assets/gallery/facility-exterior.webp",
+        "parentOrganization": {"@id": "https://biotinfeeds.com/#organization"},
+        "telephone": "+2347031944660",
+        "email": "precisenutrition5@gmail.com",
+        "priceRange": "Contact for current pricing",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "BR 4, Nnamdi Azikiwe Expressway, opposite IBRO Filling Station, Ungwan Muazu",
+          "addressLocality": "Kaduna",
+          "addressRegion": "Kaduna State",
+          "addressCountry": "NG"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "08:00",
+            "closes": "17:00"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://biotinfeeds.com/#website",
+        "url": "https://biotinfeeds.com/",
+        "name": "Biotin Feeds",
+        "publisher": {"@id": "https://biotinfeeds.com/#organization"},
+        "inLanguage": "en-NG"
+      },
+      {
+        "@type": "ItemList",
+        "name": "Biotin Feeds product range",
+        "numberOfItems": 12,
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"url":"https://biotinfeeds.com/products/layer-mash/","name":"Layer Mash"},
+          {"@type":"ListItem","position":2,"url":"https://biotinfeeds.com/products/grower-mash/","name":"Grower Mash"},
+          {"@type":"ListItem","position":3,"url":"https://biotinfeeds.com/products/chick-mash/","name":"Chick Mash"},
+          {"@type":"ListItem","position":4,"url":"https://biotinfeeds.com/products/prelay-mash/","name":"Prelay Mash"},
+          {"@type":"ListItem","position":5,"url":"https://biotinfeeds.com/products/broiler-prestarter/","name":"Broiler Pre-Starter Mash"},
+          {"@type":"ListItem","position":6,"url":"https://biotinfeeds.com/products/broiler-starter/","name":"Broiler Starter Mash"},
+          {"@type":"ListItem","position":7,"url":"https://biotinfeeds.com/products/broiler-finisher/","name":"Broiler Finisher Mash"},
+          {"@type":"ListItem","position":8,"url":"https://biotinfeeds.com/products/layer-40/","name":"Layer 40% Concentrate"},
+          {"@type":"ListItem","position":9,"url":"https://biotinfeeds.com/products/grower-30/","name":"Grower 30% Concentrate"},
+          {"@type":"ListItem","position":10,"url":"https://biotinfeeds.com/products/chick-40/","name":"Chick 40% Concentrate"},
+          {"@type":"ListItem","position":11,"url":"https://biotinfeeds.com/products/broiler-50/","name":"Broiler 50% Concentrate"},
+          {"@type":"ListItem","position":12,"url":"https://biotinfeeds.com/products/ruminant/","name":"Ruminant Concentrate"}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -95,7 +181,7 @@
       <div class="feed-stage reveal" id="feedStage">
         <div class="stage-visual">
           <div class="stage-orbit" aria-hidden="true"></div>
-          <img id="animalImage" class="animal-image animal-layers" src="assets/animals-layers.png" alt="Healthy laying hen">
+          <img id="animalImage" class="animal-image animal-layers" src="assets/animals-layers.png" alt="Healthy laying hen" loading="lazy" decoding="async">
           <div class="stage-label"><span>Selected class</span><strong id="stageAnimal">Layers</strong></div>
         </div>
         <div class="feed-panel" role="tabpanel" aria-live="polite">
@@ -104,7 +190,7 @@
             <span class="availability"><i></i> Available year-round</span>
           </div>
           <div class="featured-feed">
-            <div class="bag-frame"><img id="bagImage" src="assets/products/layer-mash.webp" alt="Biotin Feeds Layer Mash bag" width="600" height="800" decoding="async"></div>
+            <div class="bag-frame"><img id="bagImage" src="assets/products/layer-mash.webp" alt="Biotin Feeds Layer Mash bag" width="600" height="800" loading="lazy" decoding="async"></div>
             <div>
               <p class="product-type" id="productType">Complete mash</p>
               <h4 id="productName">Layer Mash</h4>
