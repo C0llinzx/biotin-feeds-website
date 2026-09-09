@@ -1,0 +1,46 @@
+/* Final responsive refinements and small component overrides. */
+.team-card.featured:after{content:none}
+.team-card figcaption{display:flex;align-items:flex-end;justify-content:space-between;gap:14px}
+.team-caption-copy,.team-caption-copy b,.team-caption-copy>span{display:block}
+.team-caption-copy{min-width:0}
+.team-caption-copy>span{margin-top:7px;color:rgba(255,255,255,.73);font-size:.75rem}
+.team-linkedin{display:grid!important;flex:0 0 38px;width:38px;height:38px;margin:0!important;place-items:center;border:1px solid rgba(255,255,255,.38);border-radius:50%;background:rgba(255,255,255,.92);color:#171219}
+.team-linkedin svg{width:17px;height:17px;fill:currentColor}
+.team-card:not(.featured) .team-linkedin{width:32px;height:32px;flex-basis:32px}
+.team-card:not(.featured) .team-linkedin svg{width:14px;height:14px}
+.design-credit{color:rgba(255,255,255,.72);transition:color .2s}
+.design-credit:hover,.design-credit:focus-visible{color:var(--lilac)}
+@media(max-width:900px){
+  .hero,.hero-copy,.trust-strip,.trust-strip div,.section>*{min-width:0}
+  .trust-strip{box-sizing:border-box;width:100%;max-width:none;inset-inline:0;padding-inline:24px}
+  .trust-strip div{overflow:hidden}
+  .footer-bottom{gap:14px;flex-wrap:wrap}
+}
+@media(max-width:700px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  .hero{width:100%;min-height:760px}
+  .hero-copy{box-sizing:border-box;width:100%;max-width:100%;margin-left:0;padding-inline:22px}
+  .hero-actions{max-width:100%}
+  .trust-strip{left:0;right:0;width:100%;padding:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trust-strip div,.trust-strip div:first-child{box-sizing:border-box;padding:15px 18px}
+  .trust-strip div:nth-child(2n){border-right:0}
+  .trust-strip div:nth-last-child(-n+2){border-bottom:0}
+  .trust-strip b{flex:0 0 auto}
+  .trust-strip span{min-width:0;overflow-wrap:anywhere}
+  .finder-heading,.catalog-head,.why-head,.contact-intro,.team-heading{min-width:0}
+  .contact-primary strong{overflow-wrap:anywhere}
+  footer{min-width:0}
+  .footer-bottom{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:600px){
+  .team-card figcaption{padding-right:14px}
+  .team-linkedin{width:36px;height:36px;flex-basis:36px}
+}
+@media(max-width:430px){
+  .hero-copy{padding-inline:18px}
+  .hero h1{font-size:clamp(2.9rem,14.5vw,3.9rem)}
+  .hero-lede{max-width:95%}
+  .trust-strip div,.trust-strip div:first-child{gap:11px;padding:14px 12px}
+  .trust-strip b{font-size:1.1rem}
+  .trust-strip span{font-size:.55rem;letter-spacing:.055em}
+}

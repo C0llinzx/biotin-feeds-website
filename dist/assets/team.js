@@ -33,7 +33,7 @@ function teamCard(member,index,featured){
   const article=document.createElement('article');
   article.className=`team-card ${featured?'featured':'preview'} is-entering`;
   article.setAttribute('aria-label',`${member.name}, ${member.role}`);
-  article.innerHTML=`<figure><img src="${member.image}" alt="Portrait of ${member.name}" width="1122" height="1402" loading="${featured&&activeTeamMember===0?'eager':'lazy'}" decoding="async"><figcaption><b>${member.name}</b><span>${member.role}</span></figcaption></figure><button type="button" aria-label="View ${member.name}"></button>`;
+  article.innerHTML=`<figure><img src="${member.image}" alt="Portrait of ${member.name}" width="1122" height="1402" loading="${featured&&activeTeamMember===0?'eager':'lazy'}" decoding="async"><figcaption><span class="team-caption-copy"><b>${member.name}</b><span>${member.role}</span></span><span class="team-linkedin" role="img" aria-label="LinkedIn profile link coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.3H3.2V19h3.3V8.3ZM4.85 3A1.92 1.92 0 1 0 4.85 6.84 1.92 1.92 0 0 0 4.85 3ZM19.8 12.87c0-3.22-1.72-4.72-4.02-4.72-1.85 0-2.68 1.02-3.14 1.73V8.3H9.35V19h3.29v-5.3c0-1.4.27-2.8 2.04-2.8 1.75 0 1.77 1.64 1.77 2.9V19h3.3l.05-6.13Z"/></svg></span></figcaption></figure><button type="button" aria-label="View ${member.name}"></button>`;
   if(!featured)article.querySelector('button').addEventListener('click',()=>showTeamMember(index,true));
   return article;
 }
