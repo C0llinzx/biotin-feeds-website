@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="assets/product-images.css">
   <link rel="stylesheet" href="assets/typography.css">
   <link rel="stylesheet" href="assets/gallery-stories.css">
+  <link rel="stylesheet" href="assets/team.css">
   <link rel="stylesheet" href="assets/premium-interactions.css">
 </head>
 <body>
@@ -36,7 +37,7 @@
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
     <nav id="mainNav" aria-label="Primary navigation">
-      <a href="#about">About</a><a href="#products">Products</a><a href="#coverage">Coverage</a><a href="#gallery">Gallery</a><a href="#testimonials">Stories</a>
+      <a href="#about">About</a><a href="#products">Products</a><a href="#coverage">Coverage</a><a href="#team">Team</a><a href="#gallery">Gallery</a><a href="#testimonials">Stories</a>
     </nav>
     <a class="header-cta" href="#finder">Find your feed <span aria-hidden="true">↗</span></a>
   </header>
@@ -200,9 +201,28 @@
       </div>
     </section>
 
+    <section class="team section" id="team">
+      <div class="team-heading reveal">
+        <div><div class="section-kicker"><span>07</span> Our leadership</div><h2>The people behind<br><em>precise nutrition.</em></h2></div>
+        <p>Experienced people guiding every part of Biotin Feeds—from formulation and quality control to customer service and delivery.</p>
+      </div>
+      <div class="team-explorer reveal" role="region" aria-roledescription="carousel" aria-label="Biotin Feeds leadership team">
+        <div class="team-directory" id="teamDirectory" role="tablist" aria-label="Choose a team member"></div>
+        <div class="team-showcase">
+          <div class="team-ambient" aria-hidden="true"><img id="teamAmbient" alt=""></div>
+          <div class="team-cards" id="teamCards" aria-live="polite"></div>
+          <div class="team-footer">
+            <span id="teamCount">01 / 09</span>
+            <div class="team-progress" aria-hidden="true"><i id="teamProgress"></i></div>
+            <div class="team-controls"><button id="teamPrev" type="button" aria-label="Previous team member">←</button><button id="teamNext" type="button" aria-label="Next team member">→</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="gallery section" id="gallery">
       <div class="gallery-heading reveal">
-        <div><div class="section-kicker"><span>07</span> Inside Biotin Feeds</div><h2>Real work.<br><em>Every day.</em></h2></div>
+        <div><div class="section-kicker"><span>08</span> Inside Biotin Feeds</div><h2>Real work.<br><em>Every day.</em></h2></div>
         <p>Step inside our Kaduna operation—from careful preparation and production to the people, learning and logistics behind every delivery.</p>
       </div>
       <div class="gallery-grid reveal" aria-label="Biotin Feeds photo gallery">
@@ -220,7 +240,7 @@
 
     <section class="testimonials section" id="testimonials">
       <div class="testimonial-head reveal">
-        <div><div class="section-kicker light"><span>08</span> Farmer stories</div><h2>Trust built<br><em>on results.</em></h2></div>
+        <div><div class="section-kicker light"><span>09</span> Farmer stories</div><h2>Trust built<br><em>on results.</em></h2></div>
         <p>Short, direct accounts from customers using Biotin Feeds on their farms.</p>
       </div>
       <div class="testimonial-shell reveal" role="region" aria-roledescription="carousel" aria-label="Customer testimonials">
@@ -234,7 +254,7 @@
     </section>
 
     <section class="contact section" id="contact">
-      <div class="contact-intro reveal"><div class="section-kicker"><span>09</span> Talk to us</div><h2>Ready to find<br><em>the right feed?</em></h2><p>Speak directly with our team for product recommendations, current pricing and availability.</p></div>
+      <div class="contact-intro reveal"><div class="section-kicker"><span>10</span> Talk to us</div><h2>Ready to find<br><em>the right feed?</em></h2><p>Speak directly with our team for product recommendations, current pricing and availability.</p></div>
       <div class="contact-grid reveal">
         <a class="contact-primary" href="https://wa.me/2347031944660?text=Hello%20Biotin%20Feeds%2C%20I%20would%20like%20help%20choosing%20the%20right%20feed." target="_blank" rel="noopener"><span>WhatsApp us</span><strong>0703 194 4660</strong><i>↗</i></a>
         <div class="contact-card"><span>Call our locations</span><a href="tel:+2347031944660">Kaduna · 0703 194 4660</a><a href="tel:+2348154999564">Kano · 0815 499 9564</a><a href="tel:+2348105460707">Abuja · 0810 546 0707</a><a href="tel:+2349034696128">Kaduna II · 0903 469 6128</a></div>
@@ -285,5 +305,6 @@
   <script src="assets/d3.min.js"></script>
   <script src="assets/topojson-client.min.js"></script>
   <script src="assets/app.js"></script>
+  <script src="assets/team.js"></script>
 </body>
 </html>
