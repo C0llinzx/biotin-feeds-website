@@ -4,7 +4,7 @@ const teamMembers=[
   {name:'Ibrahim Umoru',role:'HR / Head of Accounts',image:'assets/team/ibrahim-umoru.webp'},
   {name:'Balogun Ali',role:'Head of Quality Control',image:'assets/team/balogun-ali.webp'},
   {name:'Ahmad Usman',role:'Head of Supplies',image:'assets/team/ahmad-usman.webp'},
-  {name:'Moses Oche',role:'Head of Production',image:'assets/team/moses-oche-2026.png'},
+  {name:'Moses Oche',role:'Head of Production',image:'assets/team/moses-oche-v2.webp'},
   {name:'Kabir Ishola (RAS)',role:'Head of R&D',image:'assets/team/kabir-ishola.webp'},
   {name:'Arafat Idris',role:'Head of Sales',image:'assets/team/arafat-idris.webp'},
   {name:'Zubair Asipita',role:'Head of Logistics',image:'assets/team/zubair-asipita.webp'}
