@@ -14,10 +14,10 @@ const products = [
 ].map(product => ({...product, image:`assets/products/${product.id}.webp`}));
 
 const categoryConfig = {
-  layers:{label:'Layers',title:'Feed for enduring production',animal:'assets/animals-layers.png',alt:'Healthy laying hen',ids:['layer-mash','prelay-mash','layer-40']},
+  layers:{label:'Layers',title:'Feed for enduring production',animal:'assets/animals-layers.png',alt:'Healthy laying hen with eggs',ids:['layer-mash','prelay-mash','layer-40']},
   pullets:{label:'Chicks & pullets',title:'A strong start, stage by stage',animal:'assets/animals-pullets.png',alt:'Healthy chick and young pullet',ids:['chick-mash','grower-mash','chick-40','grower-30']},
-  broilers:{label:'Broilers',title:'From brooding to finishing',animal:'assets/animals-broilers.png',alt:'Healthy broiler chicken',ids:['broiler-prestarter','broiler-starter','broiler-finisher','broiler-50']},
-  ruminants:{label:'Cattle / ruminants',title:'Balanced nutrition for healthy growth',animal:'assets/animals-ruminants-full.webp',alt:'Healthy full-body cattle',ids:['ruminant']}
+  broilers:{label:'Broilers',title:'From brooding to finishing',animal:'assets/animals-broilers.png',alt:'Healthy adult broiler with a smaller chick',ids:['broiler-prestarter','broiler-starter','broiler-finisher','broiler-50']},
+  ruminants:{label:'Cattle / ruminants',title:'Balanced nutrition for healthy growth',animal:'assets/animals-ruminants.png',alt:'Healthy cattle standing beside a goat',ids:['ruminant']}
 };
 
 const els = {
@@ -79,12 +79,12 @@ const galleryPhotos=[
   {src:'assets/gallery/bagging-production.webp',category:'Production',title:'Layer Mash in production',description:'Our team sealing finished Layer Mash bags during the production process.',alt:'Biotin Feeds workers sealing Layer Mash bags during production'},
   {src:'assets/gallery/ingredient-measurement.webp',category:'Preparation',title:'Careful ingredient measurement',description:'Feed ingredients are measured carefully as part of day-to-day preparation.',alt:'Worker carefully measuring feed ingredients on a digital scale'},
   {src:'assets/gallery/feed-dispatch.webp',category:'Logistics',title:'Packed and ready for dispatch',description:'Finished feed bags loaded securely for the journey to customers.',alt:'A delivery truck packed with Biotin Feeds bags'},
-  {src:'assets/gallery/learning-session.webp',category:'Community',title:'A Biotin Feeds learning session',description:'Sharing practical knowledge is part of how we stay connected to the people we serve.',alt:'Participants attending a Biotin Feeds learning session'},
-  {src:'assets/gallery/fleet-sanitisation.webp',category:'Operations',title:'Preparing the delivery vehicle',description:'The team preparing and cleaning a vehicle before feed delivery operations.',alt:'Workers preparing and sanitising a Biotin Feeds delivery vehicle'},
+  {src:'assets/gallery/learning-session.webp',category:'',title:'Annual General Meeting',description:'',alt:'Participants attending the Biotin Feeds Annual General Meeting'},
+  {src:'assets/gallery/fleet-sanitisation.webp',category:'',title:'Keeping Biosecurity Measures Before Entry of Vehicles',description:'',alt:'Workers keeping biosecurity measures before entry of a Biotin Feeds vehicle'},
   {src:'assets/gallery/warehouse-stock.webp',category:'Fulfilment',title:'Layer Mash organised for fulfilment',description:'Finished product arranged at the facility before customer collection or dispatch.',alt:'Biotin Feeds Layer Mash organised in the warehouse'},
   {src:'assets/gallery/facility-sign.webp',category:'Kaduna',title:'Find us in Ungwan Muazu',description:'The roadside sign welcoming customers to Biotin Feeds and Concentrates in Kaduna.',alt:'Biotin Feeds and Concentrates roadside sign in Kaduna'},
   {src:'assets/gallery/office-team.webp',category:'Team',title:'Keeping the operation moving',description:'Every order is supported by people managing the important details behind the scenes.',alt:'A Biotin Feeds team member working at the office'},
-  {src:'assets/gallery/delivery-preparation.webp',category:'Logistics',title:'Preparing a feed delivery',description:'Feed and vehicle preparation taking place at the Biotin Feeds facility.',alt:'Workers preparing a feed delivery at the Biotin Feeds facility'},
+  {src:'assets/gallery/delivery-preparation.webp',category:'',title:'Keeping Biosecurity Measures Before Entry of Vehicles',description:'',alt:'Workers keeping biosecurity measures before entry of a Biotin Feeds vehicle'},
   {src:'assets/gallery/team-member.webp',category:'Team',title:'People behind precise nutrition',description:'A member of the Biotin Feeds team during a company programme.',alt:'A Biotin Feeds team member standing beside a company banner'},
   {src:'assets/gallery/community-recognition.webp',category:'Community',title:'A moment of recognition',description:'A presentation moment captured during a Biotin Feeds programme.',alt:'Recognition moment during a Biotin Feeds programme'}
 ];
@@ -93,7 +93,7 @@ const galleryDialog=document.getElementById('galleryDialog'),galleryImage=docume
 function showGalleryPhoto(index){
   galleryIndex=(index+galleryPhotos.length)%galleryPhotos.length;const photo=galleryPhotos[galleryIndex];
   galleryImage.classList.remove('is-panning');galleryImage.src=photo.src;galleryImage.alt=photo.alt;galleryAmbient.src=photo.src;
-  document.getElementById('galleryDialogCategory').textContent=photo.category;document.getElementById('galleryDialogTitle').textContent=photo.title;document.getElementById('galleryDialogDescription').textContent=photo.description;
+  const category=document.getElementById('galleryDialogCategory'),description=document.getElementById('galleryDialogDescription');category.textContent=photo.category;category.hidden=!photo.category;document.getElementById('galleryDialogTitle').textContent=photo.title;description.textContent=photo.description;description.hidden=!photo.description;
   document.getElementById('galleryDialogCount').textContent=`${String(galleryIndex+1).padStart(2,'0')} / ${String(galleryPhotos.length).padStart(2,'0')}`;document.getElementById('galleryProgressBar').style.width=`${((galleryIndex+1)/galleryPhotos.length)*100}%`;
   requestAnimationFrame(()=>requestAnimationFrame(()=>galleryImage.classList.add('is-panning')));
 }
@@ -120,18 +120,27 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){stopGaller
 const zoneStates={
   'North West':['Jigawa','Kaduna','Kano','Katsina','Kebbi','Sokoto','Zamfara'],
   'North Central':['Benue','Kogi','Kwara','Nasarawa','Niger','Plateau','Federal Capital Territory'],
-  'North East':['Adamawa','Bauchi','Borno','Gombe','Taraba','Yobe']
+  'North East':['Adamawa','Bauchi','Borno','Gombe','Taraba','Yobe'],
+  'South West':['Ekiti','Lagos','Ogun','Ondo','Osun','Oyo'],
+  'South South':['Akwa Ibom','Bayelsa','Cross River','Delta','Edo','Rivers'],
+  'South East':['Abia','Anambra','Ebonyi','Enugu','Imo']
 };
 const aliases={'Abuja Federal Capital Territory':'Federal Capital Territory','Federal Capital Territory':'Federal Capital Territory','Nassarawa':'Nasarawa'};
+const zoneClasses={'North West':'nw','North Central':'nc','North East':'ne','South West':'sw','South South':'ss','South East':'se'};
+const statePhones={
+  'Kaduna':['0703 194 4660','0903 469 6128'],
+  'Kano':['0815 499 9564'],
+  'Federal Capital Territory':['0810 546 0707']
+};
 function getZone(name){const clean=aliases[name]||name;return Object.entries(zoneStates).find(([,states])=>states.includes(clean))?.[0]||null}
 async function renderMap(){
   try{
     const topo=await fetch('assets/nigeria-states.json').then(r=>r.json());const feature=topojson.feature(topo,topo.objects.NGA_adm1);const svg=d3.select('#nigeriaMap'),projection=d3.geoMercator().fitExtent([[25,18],[535,485]],feature),path=d3.geoPath(projection),tip=document.getElementById('mapTooltip'),card=document.querySelector('.map-card');
-    svg.selectAll('path').data(feature.features).join('path').attr('d',path).attr('class',d=>{const z=getZone(d.properties.NAME_1);return 'state '+(z?`covered zone-${z==='North West'?'nw':z==='North Central'?'nc':'ne'}`:'')}).attr('tabindex',d=>getZone(d.properties.NAME_1)?0:null).attr('aria-label',d=>`${aliases[d.properties.NAME_1]||d.properties.NAME_1}${getZone(d.properties.NAME_1)?`, ${getZone(d.properties.NAME_1)} service area`:''}`)
-      .on('mousemove focus',function(event,d){const name=aliases[d.properties.NAME_1]||d.properties.NAME_1,zone=getZone(d.properties.NAME_1);if(!zone)return;tip.style.display='block';tip.innerHTML=`<b>${name}</b><br>${zone} · Service area`;const rect=card.getBoundingClientRect();const x=event.clientX?event.clientX-rect.left+12:25,y=event.clientY?event.clientY-rect.top+12:25;tip.style.left=`${Math.min(x,rect.width-150)}px`;tip.style.top=`${Math.min(y,rect.height-60)}px`}).on('mouseleave blur',()=>tip.style.display='none');
-  }catch(err){document.querySelector('.map-card').classList.add('map-error');document.getElementById('nigeriaMap').outerHTML='<div class="map-fallback"><b>Northern Nigeria service area</b><p>North West · North Central · North East</p></div>'}
+    svg.selectAll('path').data(feature.features).join('path').attr('d',path).attr('class',d=>{const z=getZone(d.properties.NAME_1);return 'state '+(z?`covered zone-${zoneClasses[z]}`:'')}).attr('tabindex',d=>getZone(d.properties.NAME_1)?0:null).attr('aria-label',d=>{const name=aliases[d.properties.NAME_1]||d.properties.NAME_1,zone=getZone(d.properties.NAME_1),phone=statePhones[name];return zone?`${name}, ${zone} delivery area${phone?`. Inquiry ${phone.join(' or ')}`:''}`:name})
+      .on('mousemove focus',function(event,d){const name=aliases[d.properties.NAME_1]||d.properties.NAME_1,zone=getZone(d.properties.NAME_1),phone=statePhones[name];if(!zone)return;tip.style.display='block';tip.innerHTML=`<b>${name}</b><br>${zone} · Delivery area${phone?`<span class="map-phone">Call ${phone.join(' · ')}</span>`:''}`;const rect=card.getBoundingClientRect();const x=event.clientX?event.clientX-rect.left+12:25,y=event.clientY?event.clientY-rect.top+12:25;tip.style.left=`${Math.min(x,rect.width-205)}px`;tip.style.top=`${Math.min(y,rect.height-(phone?86:60))}px`}).on('mouseleave blur',()=>tip.style.display='none');
+  }catch(err){document.querySelector('.map-card').classList.add('map-error');document.getElementById('nigeriaMap').outerHTML='<div class="map-fallback"><b>Nationwide delivery</b><p>Serving all six geopolitical zones across Nigeria</p></div>'}
 }
 renderMap();
-document.querySelectorAll('.zone-button').forEach(button=>button.addEventListener('click',()=>{const zone=button.dataset.zone;document.querySelectorAll('.zone-button').forEach(b=>b.classList.toggle('active',b===button));document.getElementById('activeZoneLabel').textContent=zone;document.querySelectorAll('.state').forEach(path=>{const name=path.getAttribute('aria-label')||'';path.classList.toggle('dim',!name.includes(zone))})}));
+document.querySelectorAll('.zone-button').forEach(button=>button.addEventListener('click',()=>{const zone=button.dataset.zone;document.querySelectorAll('.zone-button').forEach(b=>b.classList.toggle('active',b===button));document.getElementById('activeZoneLabel').textContent=zone;document.querySelectorAll('.state').forEach(path=>{const name=path.getAttribute('aria-label')||'';path.classList.toggle('dim',zone!=='Nationwide'&&!name.includes(zone))})}));
 document.getElementById('year').textContent=new Date().getFullYear();
 displayCategory('layers',false);
