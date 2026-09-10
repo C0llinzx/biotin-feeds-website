@@ -17,7 +17,7 @@ const categoryConfig = {
   layers:{label:'Layers',title:'Feed for enduring production',animal:'assets/animals-layers-v2.webp',alt:'Healthy laying hen with eggs',ids:['layer-mash','prelay-mash','layer-40']},
   pullets:{label:'Chicks & pullets',title:'A strong start, stage by stage',animal:'assets/animals-pullets.png',alt:'Healthy chick and young pullet',ids:['chick-mash','grower-mash','chick-40','grower-30']},
   broilers:{label:'Broilers',title:'From brooding to finishing',animal:'assets/animals-broilers-v2.webp',alt:'Healthy adult broiler with a smaller chick',ids:['broiler-prestarter','broiler-starter','broiler-finisher','broiler-50']},
-  ruminants:{label:'Cattle / ruminants',title:'Balanced nutrition for healthy growth',animal:'assets/animals-ruminants-v2.webp',alt:'Healthy Nigerian cattle standing beside a goat',ids:['ruminant']}
+  ruminants:{label:'Cattle / ruminants',title:'Balanced nutrition for healthy growth',animal:'assets/animals-ruminants-v4.webp',alt:'Healthy Nigerian cattle standing beside a goat',ids:['ruminant']}
 };
 
 const els = {
@@ -33,7 +33,7 @@ function displayProduct(product){
   els.bag.animate([{opacity:.2,transform:'translateY(10px)'},{opacity:1,transform:'none'}],{duration:360,easing:'ease-out'});
 }
 function displayCategory(key, focusFirst=true){
-  const config=categoryConfig[key]; els.stageAnimal.textContent=config.label; els.title.textContent=config.title; els.animal.src=config.animal; els.animal.alt=config.alt; els.animal.className=`animal-image animal-${key}`;
+  const config=categoryConfig[key]; els.stage.dataset.category=key; els.stageAnimal.textContent=config.label; els.title.textContent=config.title; els.animal.src=config.animal; els.animal.alt=config.alt; els.animal.className=`animal-image animal-${key}`;
   els.options.replaceChildren(...config.ids.map((id,i)=>{const p=products.find(x=>x.id===id);const b=document.createElement('button');b.type='button';b.className='feed-option'+(i===0?' active':'');b.dataset.id=id;b.textContent=p.name;b.addEventListener('click',()=>displayProduct(p));return b}));
   displayProduct(products.find(p=>p.id===config.ids[0]));
   if(focusFirst) els.stage.animate([{opacity:.72,transform:'scale(.995)'},{opacity:1,transform:'none'}],{duration:420,easing:'ease-out'});

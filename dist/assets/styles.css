@@ -5,4 +5,16 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.stage-orbit{animation:none}.animal-image,.quote.active{animation:none}.btn,.product-card{transition:none}}
 
 /* Nationwide coverage refinements */
+/* Soft studio animal stage */
+.feed-stage{--stage-glow:rgba(217,159,226,.52)}
+.feed-stage[data-category="layers"]{--stage-glow:rgba(225,153,207,.48)}
+.feed-stage[data-category="pullets"]{--stage-glow:rgba(229,196,166,.45)}
+.feed-stage[data-category="broilers"]{--stage-glow:rgba(202,177,231,.52)}
+.feed-stage[data-category="ruminants"]{--stage-glow:rgba(203,151,112,.42)}
+.stage-visual{background:radial-gradient(ellipse at 50% 58%,rgba(255,255,255,.07),transparent 56%),linear-gradient(145deg,#351039 0%,#5a1d64 48%,#241028 100%)}
+.stage-visual:before{inset:auto;width:78%;height:66%;z-index:0;border-radius:50%;background-image:none;background:radial-gradient(ellipse,var(--stage-glow) 0%,rgba(147,76,157,.18) 38%,transparent 72%);background-size:auto;mask-image:none;filter:blur(26px);opacity:.54;transform:scale(.9);animation:stageBreathe 7s ease-in-out infinite}
+.stage-visual:after{content:"";position:absolute;z-index:1;left:16%;right:16%;bottom:12%;height:15%;border-radius:50%;background:radial-gradient(ellipse,rgba(8,2,10,.42),transparent 70%);filter:blur(14px)}
+.stage-orbit{display:none}
+@keyframes stageBreathe{0%,100%{opacity:.46;transform:scale(.88)}50%{opacity:.82;transform:scale(1.04)}}
+@media(prefers-reduced-motion:reduce){.stage-visual:before{animation:none}}
 .zone-button i{flex:0 0 auto}.zone-button i.all{background:var(--lime);box-shadow:0 0 0 3px rgba(122,22,131,.13)}.zone-button i.nc{background:#9851a3}.zone-button i.ne{background:#bd82c5}.zone-button i.sw{background:#936c4d}.zone-button i.ss{background:#b38b67}.zone-button i.se{background:#d0ad87}.state.zone-nc{fill:#9851a3}.state.zone-ne{fill:#bd82c5}.state.zone-sw{fill:#936c4d}.state.zone-ss{fill:#b38b67}.state.zone-se{fill:#d0ad87}.map-tooltip{min-width:150px;box-shadow:0 12px 32px rgba(23,18,25,.2)}.map-phone{display:block;margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.18);color:var(--lime);font-weight:600}
