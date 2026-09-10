@@ -5,6 +5,7 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.stage-orbit{animation:none}.animal-image,.quote.active{animation:none}.btn,.product-card{transition:none}}
 
 /* Nationwide coverage refinements */
+.contact-card.address .map-link{display:inline-flex;align-items:center;gap:10px;width:max-content;max-width:100%;padding-bottom:4px;border-bottom:1px solid rgba(122,22,131,.35);color:var(--purple);font-weight:600}.contact-card.address .map-link:hover,.contact-card.address .map-link:focus-visible{border-color:var(--purple)}
 /* Soft studio animal stage */
 .feed-stage{--stage-glow:rgba(217,159,226,.52)}
 .feed-stage[data-category="layers"]{--stage-glow:rgba(225,153,207,.48)}
