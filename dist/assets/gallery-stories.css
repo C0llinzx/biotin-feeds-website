@@ -70,6 +70,7 @@
 .quote figcaption b{color:var(--ink);font-size:.9rem;font-weight:680}
 .quote figcaption small{margin-top:3px;color:#7f7581;font-size:.73rem}
 .quote figcaption .story-monogram{display:grid;width:46px;height:46px;place-items:center;margin:0;border-radius:50%;background:#ead0ef;color:#4d1055;font-size:.73rem;font-weight:750;letter-spacing:.04em}
+.quote figcaption .story-avatar{display:block;width:48px;height:48px;flex:0 0 48px;margin:0;border:2px solid #ead0ef;border-radius:50%;object-fit:cover;object-position:center;box-shadow:0 5px 16px rgba(53,16,62,.16)}
 .story-controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:48px}
 .story-controls .quote-nav{position:static;display:grid;width:48px;height:48px;place-items:center;transform:none;border-color:rgba(255,255,255,.3)}
 .story-controls .quote-dots{position:static;display:flex;gap:8px}
