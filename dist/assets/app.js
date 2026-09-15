@@ -14,7 +14,7 @@ const products = [
 ].map(product => ({...product, image:`assets/products/${product.id}-cutout.webp`}));
 
 const categoryConfig = {
-  layers:{label:'Layers',title:'Feed for enduring production',animal:'assets/animals-layers-v2.webp',alt:'Healthy laying hen with eggs',ids:['layer-mash','prelay-mash','layer-40']},
+  layers:{label:'Layers',title:'Feed for enduring production',animal:'assets/animals-layers-v3.webp',alt:'Healthy laying hen with eggs',ids:['layer-mash','prelay-mash','layer-40']},
   pullets:{label:'Chicks & pullets',title:'A strong start, stage by stage',animal:'assets/animals-pullets.png',alt:'Healthy chick and young pullet',ids:['chick-mash','grower-mash','chick-40','grower-30']},
   broilers:{label:'Broilers',title:'From brooding to finishing',animal:'assets/animals-broilers-v2.webp',alt:'Healthy adult broiler with a smaller chick',ids:['broiler-prestarter','broiler-starter','broiler-finisher','broiler-50']},
   ruminants:{label:'Cattle / ruminants',title:'Balanced nutrition for healthy growth',animal:'assets/animals-ruminants-v4.webp',alt:'Healthy Nigerian cattle standing beside a goat',ids:['ruminant']}
