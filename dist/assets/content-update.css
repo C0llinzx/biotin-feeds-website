@@ -1,11 +1,11 @@
 /* September 2026 content update: photographic hero and company principles. */
 .hero-slideshow{position:absolute;inset:0;background:#170d19;overflow:hidden}
-.hero-slide{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;opacity:0;transform:scale(1.025);animation:heroCrossfade 45s ease-in-out infinite;will-change:opacity,transform;filter:brightness(1.03) saturate(1.03)}
+.hero-slide{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;opacity:0;transform:scale(1.01);animation:heroCrossfade 45s ease-in-out infinite;will-change:opacity,transform;filter:brightness(1.015) saturate(1.02)}
 .hero-slide-team{opacity:1;object-position:center 57%}
 .hero-slide-facility{animation-delay:-30s;object-position:center 57%}
 .hero-slide-biosecurity{animation-delay:-15s;object-position:center 47%}
 .hero-overlay{background:linear-gradient(90deg,rgba(13,7,15,.84) 0%,rgba(13,7,15,.58) 42%,rgba(13,7,15,.2) 100%),linear-gradient(0deg,rgba(13,7,15,.74) 0%,rgba(13,7,15,.08) 48%,rgba(13,7,15,.16) 100%)}
-@keyframes heroCrossfade{0%,28%{opacity:1;transform:scale(1.025)}33.333%,95%{opacity:0;transform:scale(1.065)}100%{opacity:1;transform:scale(1.025)}}
+@keyframes heroCrossfade{0%,28%{opacity:1;transform:scale(1.01)}33.333%,95%{opacity:0;transform:scale(1.035)}100%{opacity:1;transform:scale(1.01)}}
 
 .principles{position:relative;overflow:hidden;background:#211126;color:#fff}
 .principles:before{content:"V";position:absolute;right:-.06em;top:-.28em;color:rgba(216,174,224,.045);font:600 min(62vw,54rem)/1 var(--display);letter-spacing:-.12em;pointer-events:none}
