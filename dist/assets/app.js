@@ -11,7 +11,7 @@ const products = [
   {id:'chick-40',name:'Chick 40% Concentrate',filter:'concentrate',category:'Chicks & pullets',type:'Concentrate',bestFor:'Chick-feed formulation',benefit:'Concentrated nutrients for the brooding stage.',points:['Supports smooth brooding','Supports healthy chick development']},
   {id:'broiler-50',name:'Broiler 50% Concentrate',filter:'concentrate',category:'Broilers',type:'Concentrate',bestFor:'Broiler-feed formulation',benefit:'Concentrated support for broiler frame and weight development.',points:['Supports frame development','Formulated for efficient conversion']},
   {id:'ruminant',name:'Ruminant Concentrate',filter:'ruminant',category:'Cattle / ruminants',type:'Concentrate',bestFor:'Cattle and other ruminants',benefit:'Balanced nutrition for healthy growth and animal condition.',points:['Supports healthy growth','Supports animal condition and meat quality']}
-].map(product => ({...product, image:`assets/products/${product.id}.webp`}));
+].map(product => ({...product, image:`assets/products/${product.id}-cutout.webp`}));
 
 const categoryConfig = {
   layers:{label:'Layers',title:'Feed for enduring production',animal:'assets/animals-layers-v2.webp',alt:'Healthy laying hen with eggs',ids:['layer-mash','prelay-mash','layer-40']},
