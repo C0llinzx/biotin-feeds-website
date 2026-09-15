@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="assets/team.css">
   <link rel="stylesheet" href="assets/premium-interactions.css">
   <link rel="stylesheet" href="assets/responsive-fixes.css">
+  <link rel="stylesheet" href="assets/content-update.css?v=20260915a">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -140,10 +141,10 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="assets/hero-farm.jpg" aria-hidden="true" tabindex="-1" disablepictureinpicture>
-        <source src="assets/hero-farm-mobile.mp4" type="video/mp4" media="(max-width: 600px)">
-        <source src="assets/hero-farm.mp4" type="video/mp4">
-      </video>
+      <div class="hero-slideshow" aria-hidden="true">
+        <img class="hero-slide hero-slide-facility" src="assets/gallery/facility-exterior.webp" alt="" width="1280" height="1116" fetchpriority="high" decoding="async">
+        <img class="hero-slide hero-slide-production" src="assets/gallery/bagging-production.webp" alt="" width="960" height="1280" decoding="async">
+      </div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-copy reveal">
         <p class="eyebrow light"><span></span> Trusted livestock nutrition since 2012</p>
@@ -158,7 +159,6 @@
         <span class="award-year">2024</span>
         <span>Food Security<br><b>Advocate Award</b></span><i aria-hidden="true">↘</i>
       </a>
-      <button class="hero-video-toggle" id="heroVideoToggle" type="button" aria-label="Pause background video" aria-pressed="false"><span aria-hidden="true">Ⅱ</span><b>Pause motion</b></button>
       <div class="trust-strip" aria-label="Company credentials">
         <div><b>12+</b><span>Years of<br>experience</span></div>
         <div><b>NAFDAC</b><span>Approved<br>products</span></div>
@@ -223,14 +223,37 @@
         <div class="about-card reveal delay-1">
           <div class="about-number">12<sup>+</sup></div>
           <p>years focused on affordable, quality livestock nutrition</p>
-          <div class="mission"><span>Our mission</span><b>Bridge the nutrition gap. Deliver quality. Formulate precisely.</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles section" id="principles">
+      <div class="section-kicker light reveal"><span>03</span> What guides us</div>
+      <div class="principles-layout">
+        <article class="principle-vision reveal">
+          <span class="principle-number">01 / Vision</span>
+          <p>To be one of the leading animal feed manufacturing companies in <em>West Africa.</em></p>
+        </article>
+        <div class="principles-lower">
+          <article class="principle-mission reveal delay-1">
+            <span class="principle-number">02 / Mission</span>
+            <p>Your health,<br><em>our priority.</em></p>
+          </article>
+          <article class="principle-values reveal delay-2">
+            <span class="principle-number">03 / Our core values</span>
+            <ol>
+              <li><span>01</span><b>Integrity</b></li>
+              <li><span>02</span><b>Customer Centricism</b></li>
+              <li><span>03</span><b>Growing Together</b></li>
+            </ol>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="catalog section" id="products">
       <div class="catalog-head reveal">
-        <div><div class="section-kicker"><span>03</span> Complete range</div><h2>Nutrition for<br><em>every stage.</em></h2></div>
+        <div><div class="section-kicker"><span>04</span> Complete range</div><h2>Nutrition for<br><em>every stage.</em></h2></div>
         <p>Choose complete mash or concentrate by animal class and growth stage. Open any product for its key benefits and a direct pricing enquiry.</p>
       </div>
       <div class="catalog-tabs reveal" role="tablist" aria-label="Filter product catalogue">
@@ -243,7 +266,7 @@
     </section>
 
     <section class="why section">
-      <div class="section-kicker light reveal"><span>04</span> Why Biotin</div>
+      <div class="section-kicker light reveal"><span>05</span> Why Biotin</div>
       <div class="why-head reveal"><h2>Quality you can trust.<br><em>Support you can reach.</em></h2><p>Clear formulations, established industry standing and logistics across the three northern zones.</p></div>
       <div class="why-grid">
         <article class="why-card reveal"><span>01</span><div class="line-icon">◇</div><h3>Precise quality</h3><p>Carefully formulated nutrition for different animal classes and production stages.</p></article>
@@ -254,7 +277,7 @@
 
     <section class="coverage section" id="coverage">
       <div class="coverage-copy reveal">
-        <div class="section-kicker"><span>05</span> Where we serve</div>
+        <div class="section-kicker"><span>06</span> Where we serve</div>
         <h2>Across all of<br><em>Nigeria.</em></h2>
         <p>We deliver nationwide across all six geopolitical zones. Northern Nigeria remains our strongest current reach as our network continues to grow.</p>
         <div class="zone-list">
@@ -277,7 +300,7 @@
     <section class="recognition section" id="recognition">
       <div class="award-media reveal"><img src="assets/food-security-award.webp" alt="2024 Food Security Advocate Award presented to Biotin Feeds Ltd." loading="lazy" decoding="async"></div>
       <div class="award-copy reveal delay-1">
-        <div class="section-kicker"><span>06</span> Recognition</div>
+        <div class="section-kicker"><span>07</span> Recognition</div>
         <p class="award-date">15 November 2024</p>
         <h2>Food Security<br><em>Advocate Award.</em></h2>
         <p>Presented to Biotin Feeds Ltd. in recognition of its contribution to food security and the growth of the agro sector in Nigeria and across Africa.</p>
@@ -302,7 +325,7 @@
 
     <section class="team section" id="team">
       <div class="team-heading reveal">
-        <div><div class="section-kicker"><span>07</span> Our leadership</div><h2>The people behind<br><em>precise nutrition.</em></h2></div>
+        <div><div class="section-kicker"><span>08</span> Our leadership</div><h2>The people behind<br><em>precise nutrition.</em></h2></div>
         <p>Experienced people guiding every part of Biotin Feeds—from formulation and quality control to customer service and delivery.</p>
       </div>
       <div class="team-explorer reveal" role="region" aria-roledescription="carousel" aria-label="Biotin Feeds leadership team">
@@ -321,7 +344,7 @@
 
     <section class="gallery section" id="gallery">
       <div class="gallery-heading reveal">
-        <div><div class="section-kicker"><span>08</span> Inside Biotin Feeds</div><h2>Real work.<br><em>Every day.</em></h2></div>
+        <div><div class="section-kicker"><span>09</span> Inside Biotin Feeds</div><h2>Real work.<br><em>Every day.</em></h2></div>
         <p>Step inside our Kaduna operation—from careful preparation and production to the people, learning and logistics behind every delivery.</p>
       </div>
       <div class="gallery-grid reveal" aria-label="Biotin Feeds photo gallery">
@@ -339,21 +362,25 @@
 
     <section class="testimonials section" id="testimonials">
       <div class="testimonial-head reveal">
-        <div><div class="section-kicker light"><span>09</span> Farmer stories</div><h2>Trust built<br><em>on results.</em></h2></div>
+        <div><div class="section-kicker light"><span>10</span> Farmer stories</div><h2>Trust built<br><em>on results.</em></h2></div>
         <p>Short, direct accounts from customers using Biotin Feeds on their farms.</p>
       </div>
       <div class="testimonial-shell reveal" role="region" aria-roledescription="carousel" aria-label="Customer testimonials">
         <div class="story-stack" aria-live="polite">
-          <figure class="quote active"><div class="story-meta"><span>01 / 03</span><span>Layer Mash</span></div><blockquote>“The Layer Mash feed has been great.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">KA</span><span><b>Kabir Adewale</b><small>Biotin Feeds customer</small></span></figcaption></figure>
-          <figure class="quote"><div class="story-meta"><span>02 / 03</span><span>Farm growth</span></div><blockquote>“Biotin Feeds has helped my farm grow. I’m truly grateful.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">TF</span><span><b>Tanko Farm</b><small>Biotin Feeds customer</small></span></figcaption></figure>
-          <figure class="quote"><div class="story-meta"><span>03 / 03</span><span>Product quality</span></div><blockquote>“One of the best products to buy.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">MF</span><span><b>Makata Farm</b><small>Biotin Feeds customer</small></span></figcaption></figure>
+          <figure class="quote active"><div class="story-meta"><span>01 / 07</span><span>Layer Mash</span></div><blockquote>“The Layer Mash feed has been great.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">KA</span><span><b>Kabir Adewale</b><small>Biotin Feeds customer</small></span></figcaption></figure>
+          <figure class="quote"><div class="story-meta"><span>02 / 07</span><span>Farm growth</span></div><blockquote>“Biotin Feeds has helped my farm grow. I’m truly grateful.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">TF</span><span><b>Tanko Farm</b><small>Biotin Feeds customer</small></span></figcaption></figure>
+          <figure class="quote"><div class="story-meta"><span>03 / 07</span><span>Product quality</span></div><blockquote>“One of the best products to buy.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">MF</span><span><b>Makata Farm</b><small>Biotin Feeds customer</small></span></figcaption></figure>
+          <figure class="quote long"><div class="story-meta"><span>04 / 07</span><span>Six years of results</span></div><blockquote>“Since using Biotin Feeds for about six years, we have experienced strong bird performance, healthy flock development and consistent results from our layers. We particularly appreciate the quality and consistency of the feed, as well as the professional support we receive whenever we need assistance.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">VF</span><span><b>VECA Farms &amp; Co.</b><small>Biotin Feeds customer</small></span></figcaption></figure>
+          <figure class="quote long"><div class="story-meta"><span>05 / 07</span><span>Feed quality</span></div><blockquote>“The quality of our feed is a very important part of our poultry operation, and our experience with Biotin Feeds has been very impressive.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">IG</span><span><b>I.G Farms</b><small>Biotin Feeds customer</small></span></figcaption></figure>
+          <figure class="quote long"><div class="story-meta"><span>06 / 07</span><span>Return on investment</span></div><blockquote>“As a poultry farmer, feed accounts for 70% of production costs. Biotin Feeds gives me the best return on investment: a higher laying percentage, less waste and consistent quality in every bag.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">AA</span><span><b>Alafiyah Agro and Merchant Enterprises</b><small>Biotin Feeds customer</small></span></figcaption></figure>
+          <figure class="quote long"><div class="story-meta"><span>07 / 07</span><span>Dependable partnership</span></div><blockquote>“For us, choosing the right feed is not just about price; it is about getting good value, supporting the health of our birds and achieving reliable production. Biotin Feeds has proven to be a dependable partner in this regard.”</blockquote><figcaption><span class="story-monogram" aria-hidden="true">PF</span><span><b>Patnez Farm</b><small>Biotin Feeds customer</small></span></figcaption></figure>
         </div>
         <div class="story-controls"><button class="quote-nav prev" type="button" aria-label="Previous testimonial">←</button><div class="quote-dots" aria-label="Choose testimonial"></div><button class="quote-nav next" type="button" aria-label="Next testimonial">→</button><button class="quote-toggle" type="button" aria-label="Pause testimonial autoplay">Pause</button></div>
       </div>
     </section>
 
     <section class="contact section" id="contact">
-      <div class="contact-intro reveal"><div class="section-kicker"><span>10</span> Talk to us</div><h2>Ready to find<br><em>the right feed?</em></h2><p>Speak directly with our team for product recommendations, current pricing and availability.</p></div>
+      <div class="contact-intro reveal"><div class="section-kicker"><span>11</span> Talk to us</div><h2>Ready to find<br><em>the right feed?</em></h2><p>Speak directly with our team for product recommendations, current pricing and availability.</p></div>
       <div class="contact-grid reveal">
         <a class="contact-primary" href="https://wa.me/2347031944660?text=Hello%20Biotin%20Feeds%2C%20I%20would%20like%20help%20choosing%20the%20right%20feed." target="_blank" rel="noopener"><span>WhatsApp us</span><strong>0703 194 4660</strong><i>↗</i></a>
         <div class="contact-card"><span>Call our locations</span><a href="tel:+2347031944660">Kaduna · 0703 194 4660</a><a href="tel:+2348154999564">Kano · 0815 499 9564</a><a href="tel:+2348105460707">Abuja · 0810 546 0707</a><a href="tel:+2349034696128">Kaduna II · 0903 469 6128</a></div>
@@ -403,7 +430,7 @@
 
   <script src="assets/d3.min.js"></script>
   <script src="assets/topojson-client.min.js"></script>
-  <script src="assets/app.js?v=20260910d"></script>
+  <script src="assets/app.js?v=20260915a"></script>
   <script src="assets/team.js?v=20260910c"></script>
 </body>
 </html>

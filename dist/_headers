@@ -21,3 +21,6 @@
 
 /assets/*.mp4
   Cache-Control: public, max-age=2592000
+
+/portfolio-motion/*
+  X-Robots-Tag: noindex, nofollow, noarchive

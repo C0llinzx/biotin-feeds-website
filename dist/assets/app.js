@@ -63,10 +63,6 @@ function updateHeader(){header.classList.toggle('scrolled',scrollY>=Math.max(120
 addEventListener('scroll',updateHeader,{passive:true});addEventListener('resize',updateHeader,{passive:true});updateHeader();
 const menu=document.querySelector('.menu-toggle'),nav=document.getElementById('mainNav');menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
 
-const heroVideo=document.querySelector('.hero-bg'),heroVideoToggle=document.getElementById('heroVideoToggle');
-function updateHeroVideoControl(){const paused=heroVideo.paused;heroVideoToggle.classList.toggle('is-paused',paused);heroVideoToggle.setAttribute('aria-pressed',String(paused));heroVideoToggle.setAttribute('aria-label',`${paused?'Play':'Pause'} background video`);heroVideoToggle.querySelector('span').textContent=paused?'▶':'Ⅱ';heroVideoToggle.querySelector('b').textContent=paused?'Play motion':'Pause motion'}
-heroVideoToggle.addEventListener('click',()=>{if(heroVideo.paused){heroVideo.play().catch(()=>{});}else{heroVideo.pause()}updateHeroVideoControl()});heroVideo.addEventListener('play',updateHeroVideoControl);heroVideo.addEventListener('pause',updateHeroVideoControl);if(matchMedia('(prefers-reduced-motion: reduce)').matches)heroVideo.pause();updateHeroVideoControl();
-
 const sectionLinks=[...nav.querySelectorAll('a[href^="#"]')].map(link=>({link,section:document.querySelector(link.getAttribute('href'))})).filter(item=>item.section);
 const sectionObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;sectionLinks.forEach(({link,section})=>{const active=section===entry.target;link.classList.toggle('active',active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')})})},{rootMargin:'-28% 0px -58% 0px',threshold:0});sectionLinks.forEach(({section})=>sectionObserver.observe(section));
 
@@ -112,10 +108,11 @@ let quoteIndex=0,quoteTimer=0,quotePlaying=!reducedMotion,quoteInteracted=false;
 quotes.forEach((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Show testimonial ${i+1}`);b.addEventListener('click',()=>selectQuote(i));dots.appendChild(b)});
 function showQuote(i){quoteIndex=(i+quotes.length)%quotes.length;quotes.forEach((q,n)=>{const offset=(n-quoteIndex+quotes.length)%quotes.length;q.classList.toggle('active',offset===0);q.classList.toggle('is-next',offset===1);q.classList.toggle('is-prev',offset===quotes.length-1);q.setAttribute('aria-hidden',String(offset!==0))});[...dots.children].forEach((d,n)=>d.classList.toggle('active',n===quoteIndex));}
 function updateQuoteToggle(){quoteToggle.textContent=quotePlaying?'Pause':'Play';quoteToggle.setAttribute('aria-label',`${quotePlaying?'Pause':'Play'} testimonial autoplay`);storyStack.setAttribute('aria-live',quotePlaying?'off':'polite')}
-function startQuoteAutoplay(){clearInterval(quoteTimer);quoteTimer=0;if(quotePlaying&&!document.hidden)quoteTimer=setInterval(()=>showQuote(quoteIndex+1),quoteInteracted?7000:4000);updateQuoteToggle()}
+function quoteReadingDelay(){const words=(quotes[quoteIndex].querySelector('blockquote')?.textContent||'').trim().split(/\s+/).length;return Math.min(15000,Math.max(6500,3500+words*220))}
+function startQuoteAutoplay(){clearTimeout(quoteTimer);quoteTimer=0;if(quotePlaying&&!document.hidden)quoteTimer=setTimeout(()=>{showQuote(quoteIndex+1);startQuoteAutoplay()},quoteReadingDelay());updateQuoteToggle()}
 function selectQuote(index){quoteInteracted=true;showQuote(index);startQuoteAutoplay()}
 document.querySelector('.quote-nav.prev').addEventListener('click',()=>selectQuote(quoteIndex-1));document.querySelector('.quote-nav.next').addEventListener('click',()=>selectQuote(quoteIndex+1));quoteToggle.addEventListener('click',()=>{quoteInteracted=true;quotePlaying=!quotePlaying;startQuoteAutoplay()});showQuote(0);startQuoteAutoplay();
-document.addEventListener('visibilitychange',()=>{if(document.hidden){stopGalleryAutoplay();clearInterval(quoteTimer)}else{startGalleryAutoplay();startQuoteAutoplay()}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){stopGalleryAutoplay();clearTimeout(quoteTimer)}else{startGalleryAutoplay();startQuoteAutoplay()}});
 
 const zoneStates={
   'North West':['Jigawa','Kaduna','Kano','Katsina','Kebbi','Sokoto','Zamfara'],
